@@ -1,0 +1,18 @@
+.ticket-comment{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.ticket-comment:nth-child(even){
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.comment{
+    padding: 2rem;
+    width: 80%;
+    border: 1px solid rgb(175, 172, 172);
+    border-radius: 10px;
+}
