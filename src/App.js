@@ -25,7 +25,6 @@ function App() {
   useEffect(()=>{
 
     !user._id && dispatch(getUserProfile());
-    !isAuth && JSON.parse(localStorage.getItem("token")).accessToken && dispatch(loginSuccess());
 
   }, [dispatch, isAuth, user._id])
 
