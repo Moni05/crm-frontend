@@ -31,7 +31,7 @@ export default function Ticket() {
                             <td>{row._id}</td>
                             <td><Link to={`/ticket/${row._id}`}>{row.subject}</Link></td>
                             <td>{row.status}</td>
-                            <td>{row.openAt}</td>
+                            <td>{new Date(row.openAt).toLocaleString()}</td>
                         </tr>
                     )
                 })) : (<tr>
