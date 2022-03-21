@@ -20,7 +20,6 @@ function App() {
   const dispatch = useDispatch();
 	const { isAuth } = useSelector(state => state.user);
 	const { user } = useSelector(state => state.userDetail);
-  console.log(user._id);
 
   useEffect(()=>{
 
@@ -35,10 +34,10 @@ function App() {
         <Route path="/" element={<IndexPage />} />
         <Route path="/registration" element={<Registration />} />
         <Route path="/verify-account/:_id/:name" element={<UserVerification />} />
-        <Route path="/dashboard" element={ user._id ? <Layout><Dashboard /></Layout> : <Navigate to="/" /> } />
-        <Route path="/create-ticket" element={ user._id ? <Layout><NewTicket /></Layout> : <Navigate to="/" /> } />
-        <Route path="/tickets" element={ user._id ? <Layout><TicketListing /></Layout> : <Navigate to="/" /> } />
-        <Route path="/ticket/:id" element={ user._id ? <Layout><Ticket /></Layout> : <Navigate to="/" /> } />
+        <Route path="/dashboard" element={ isAuth ? <Layout><Dashboard /></Layout> : <Navigate to="/" /> } />
+        <Route path="/create-ticket" element={ isAuth ? <Layout><NewTicket /></Layout> : <Navigate to="/" /> } />
+        <Route path="/tickets" element={ isAuth ? <Layout><TicketListing /></Layout> : <Navigate to="/" /> } />
+        <Route path="/ticket/:id" element={ isAuth ? <Layout><Ticket /></Layout> : <Navigate to="/" /> } />
       </Routes>
       </BrowserRouter>
     </div>
