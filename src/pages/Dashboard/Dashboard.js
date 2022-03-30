@@ -13,10 +13,8 @@ export default function Dashboard(){
     const { tickets } = useSelector((state) => state.tickets);
 
     useEffect(() => {
-        if (!tickets.length) {
-          dispatch(fetchAllTickets());
-        }
-    }, [dispatch, tickets]);
+            dispatch(fetchAllTickets());
+    }, [dispatch]);
 
     const pendingTickets = tickets.filter((row) => row.status !== "Closed");
     const totlatTickets = tickets.length;
