@@ -5,6 +5,7 @@ import userReducer from "./user/userRedux";
 import RegistrationRedux from "./user/userRegistrationRedux";
 import newTickerReducer from "./addTicket/addTicketRedux";
 import userDetailReducer from "./user/userDetailRedux";
+import userPasswordReducer from "./user/userPasswordRedux";
 
 const store = configureStore({
     reducer: {
@@ -13,6 +14,7 @@ const store = configureStore({
         register: RegistrationRedux,
         openTicket: newTickerReducer,
         userDetail: userDetailReducer,
+        password: userPasswordReducer,
     },
 })
 
