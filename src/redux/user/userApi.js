@@ -4,7 +4,6 @@ const BaseUrl = process.env.REACT_APP_URL;
 
 export const userLogin = (loginData) =>{
     return new Promise(async(resolve, reject) => {
-
         try{
 
             const res = await axios.post(`${BaseUrl}auth/login`, loginData);
@@ -77,4 +76,30 @@ export const fetchUser = () => {
       reject(error.message);
     }
   });
+};
+
+export const reqPasswordOtp = (email) => {
+	return new Promise(async (resolve, reject) => {
+		try {
+			const { data } = await axios.post(`${BaseUrl}user/reset-password`, { email });
+
+			console.log(data);
+			resolve(data);
+		} catch (error) {
+			reject(error);
+		}
+	});
+};
+
+export const updateUserPassword = (passObj) => {
+	return new Promise(async (resolve, reject) => {
+		try {
+			const { data } = await axios.patch(`${BaseUrl}user/reset-password`, passObj);
+
+			console.log(data);
+			resolve(data);
+		} catch (error) {
+			reject(error);
+		}
+	});
 };
