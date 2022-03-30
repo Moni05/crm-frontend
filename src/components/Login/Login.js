@@ -93,7 +93,7 @@ export default function Login({formSwitcher}){
             </Row>
             <Row>
 				<Col>
-					<a href="#" onClick={() =>formSwitcher("reset")}>Forget Password?</a>
+                <Link to="/password-reset">Forget Password?</Link>
 				</Col>
 			</Row>
             <Row className="py-4">
